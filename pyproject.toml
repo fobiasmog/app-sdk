@@ -7,7 +7,7 @@ requires-python = ">=3.12,<4.0"
 license = "Apache-2.0"
 readme = "README.md"
 dependencies = [
-    "a2a-sdk==0.3.20",
+    "a2a-sdk[telemetry,sqlite]==1.0.0-alpha.0",
     "nats-py>=2.10.0,<3",
     "structlog>=24.1.0",
     "langchain-community>=0.3.24",
@@ -18,7 +18,7 @@ dependencies = [
     "asgi-lifespan>=2.1.0",
     "slim-bindings==2.0.0a0",
     "agntcy-identity-service-sdk==0.0.7",
-    "slima2a==0.3.0",
+    "slima2a",
     "agntcy-dir>=1.0.0",
 ]
 
@@ -52,3 +52,6 @@ build-backend = "hatchling.build"
 python_version = "3.12"
 warn_return_any = true
 warn_unused_configs = true
+
+[tool.uv.sources]
+slima2a = { git = "https://github.com/fobiasmog/slim-a2a-python", branch = "main" }
